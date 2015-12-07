@@ -54,7 +54,7 @@ return [
     |
     */
 
-    'from' => ['address' => null, 'name' => null],
+    'from' => ['address' => 'usedforaliyun@163.com', 'name' => 'jiemail'],
 
     /*
     |--------------------------------------------------------------------------

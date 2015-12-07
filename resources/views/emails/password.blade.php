@@ -1,0 +1,1 @@
+点击这里重置你在长乐商城的密码: {{ url('password/reset/'.$token) }}
