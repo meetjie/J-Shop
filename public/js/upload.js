@@ -15,7 +15,8 @@ var opts = {
         $("#loading").attr('class', 'am-icon-spinner am-icon-spin');
     },
     success: function (result, status, xhr) {
-        // console.log(result);
+         console.log(result);
+
         $("#loading").attr('class', 'am-icon-cloud-upload');
 
         if (result.status == 0) {
@@ -31,4 +32,5 @@ var opts = {
         alert('文件上传失败');
     }
 }
+
 $('#doc-form-file').fileUpload(opts);

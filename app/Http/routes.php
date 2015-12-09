@@ -41,4 +41,19 @@ Route::post('password/reset', 'Auth\PasswordController@postReset');
 //});
 Route::group(['namespace' => 'Admin', 'prefix' => 'admin','middleware' => 'auth'], function () {
     Route::get('/', 'IndexController@index');
+    //品牌管理
+//    Route::resource('brand', 'BrandController');
+    Route::group(['prefix' => 'brand'], function () {
+        Route::get('/search', 'BrandController@search');
+        Route::patch('/sort', 'BrandController@sort');
+        Route::patch('/is-show', 'BrandController@is_show');
+    });
+    Route::resource('brand', 'BrandController', ['except' => ['show']]);
+
+    //商品类型
+    Route::resource('type', 'TypeController');
 });
+
+//上传
+Route::post('upload', 'UploadController@store');
+
